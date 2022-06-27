@@ -1,0 +1,232 @@
+*{
+    margin: 0px;
+}
+
+body{
+    margin: 5px;
+    background-color: #8bf18b;
+}
+
+.main-div{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+
+}
+
+input {
+    border-radius: 5px;
+    padding: 3px 3px;
+}
+
+button {
+    border-radius: 5px;
+    padding: 3px 3px;
+}
+
+.prelim {
+    /* position: absolute; */
+    border: 1px solid #bdc3c7;
+    background-color: white;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+    left: 3%;
+    width: 300px;
+}
+
+.final {
+    /* position: absolute; */
+    border: 1px solid #bdc3c7;
+    background-color: white;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+    /* left: 30%; */
+    width: 300px;
+    
+}
+
+th,td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#header {
+    background-color: #16a085;
+    color: #fff;
+}
+
+.Container{
+    display: flex;
+    margin-top: 10px;
+    /* background-color:gold; */
+}
+
+.Container2{
+    display: flex;
+    margin-top: 10px;
+    /* background-color:lime; */
+}
+
+
+
+.Branch_1{
+    height: 830px;
+    width: 310px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 20px;
+}
+
+.Branch4{
+    margin-top: 200px;
+    height: 450px;
+    width: 310px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 20px;
+    background-color:limegreen;
+}
+
+.Branch_2{
+    height: 830px;
+    width: 310px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.Branch_3{
+    height: 830px;
+    width: 310px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.Branch_5{
+    height: 830px;
+    width: 310px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.Object_1:nth-child(even), .Object_2:nth-child(even), .Object_3:nth-child(even){
+    display: grid;
+    grid-template-columns: 230px 100px;
+    grid-template-rows: 0px 0px;
+    background-color: rgb(255, 0, 0);
+    width: 300px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.Object_1:nth-child(odd), .Object_2:nth-child(odd), .Object_3:nth-child(odd){
+    display: grid;
+    grid-template-columns: 120px 120px 30px;
+    grid-template-rows: 50px 50px;
+    background-color: rgb(75, 75, 75);
+    width: 300px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.Name_Forward{
+    display: flex;
+    align-items: center;
+    width: 110px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: white; 
+}
+
+select{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+select.Name{
+    width: 110px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+input.Time{
+    width: 110px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.Match{
+    height: 200px;
+}
+
+.Object_2{
+    margin-top: 35%;
+}
+
+.Match_02{
+    height: 415px;
+}
+
+.Object_3{
+    margin-top: 100%;
+}
+
+.Match_03{
+    height: 830px;
+}
+
+.Match4{
+    height: 50px;
+}
+
+
+.First:hover{
+    background-color: chocolate;
+    color: white;
+    font-size: 30px;
+    border-radius: 6px;
+    padding: 5px;   
+}
+
+.First{
+    background-color: rgb(99, 42, 1);
+    color: white;
+    font-size: 30px;
+    border-radius: 6px;
+    padding: 5px;   
+}
+
+label.number{
+    font-size: 30px;
+}
+
+.Link_Style{
+    margin-top: 10px;
+}
+
+.blue{
+    border: 5px solid blue;
+}
+
+#pink{
+    background-color: pink;
+}
+
+#aqua{
+    background-color:aqua;
+}
+
+#purple{
+    background-color: purple;
+}
+
+#white{
+    background-color: whitesmoke;
+}
+
+#lastbox{
+    height: 150px;
+}
