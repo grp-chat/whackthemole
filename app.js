@@ -106,6 +106,12 @@ io.on('connection', (sock) => {
         io.emit('newPosition', { x, y, player });
     });
 
+    sock.on('hammer', (data) => {
+        var player = data.player;
+        var e = data.e;
+        io.emit('hammerTilt', { player,e });
+    });
+
     
 
     

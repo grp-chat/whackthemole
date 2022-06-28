@@ -172,9 +172,6 @@ function appendMessage(message) {
         }
     }
 
-    //SET P1 - P4
-    
-
     if (message === "TCR: Game start" && nickname === "TCR") {
         sock.emit('gameStart');
     }
@@ -196,6 +193,10 @@ function mouseDragged(mouseX, mouseY, player) {
         player: player
     }
     sock.emit('mouseMove', data);
+}
+
+function hammerHit(player, e) {
+    sock.emit('hammer', { player, e });
 }
 
 function run() {
@@ -280,12 +281,42 @@ window.addEventListener('mousemove', e => {
 });
 
 window.addEventListener('mousedown', () => {
-    cursor2.classList.add('active');
+    if(nickname === playerOne) {
+        hammerHit("P1", "down");
+        //cursor.classList.add('active');
+    }
+    if(nickname === playerTwo) {
+        hammerHit("P2", "down");
+        //cursor2.classList.add('active');
+    }
+    
 });
 window.addEventListener('mouseup', () => {
-    cursor2.classList.remove('active');
+    if(nickname === playerOne) {
+        hammerHit("P1", "up");
+        //cursor.classList.remove('active');
+    }
+    if(nickname === playerTwo) {
+        hammerHit("P2", "up");
+        //cursor2.classList.remove('active');
+    }
+    
 });
 
+sock.on('hammerTilt', (data) => {
+    if (data.player === "P1" && data.e === "down") {
+        cursor.classList.add('active');
+    }
+    if (data.player === "P1" && data.e === "up") {
+        cursor.classList.remove('active');
+    }
+    if (data.player === "P2" && data.e === "down") {
+        cursor2.classList.add('active');
+    }
+    if (data.player === "P2" && data.e === "up") {
+        cursor2.classList.remove('active');
+    }
+});
 
 
 //---------------------------------------- SOCKETS SOCKETS SOCKETS -----------------------------------------
@@ -304,6 +335,8 @@ sock.on('chat-to-clients', data => {
 sock.on('startGame', () => {
     run();
 });
+
+
 
 
 
