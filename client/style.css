@@ -1,232 +1,113 @@
 *{
-    margin: 0px;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    margin: 5px;
-    background-color: #8bf18b;
+html, body{
+    height: 100%; 
 }
 
-.main-div{
-    position: absolute;
-    top: 5%;
-    left: 3%;
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(58, 129, 0);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items:flex-start;
+    overflow: hidden;
+    cursor: none;
 }
 
-input {
-    border-radius: 5px;
-    padding: 3px 3px;
+.score {
+    font-size: 3em;
+    margin-bottom: .5em;
+    margin-left: 30px;
 }
 
-button {
-    border-radius: 5px;
-    padding: 3px 3px;
-}
-
-.prelim {
-    /* position: absolute; */
-    border: 1px solid #bdc3c7;
-    background-color: white;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-    left: 3%;
-    width: 300px;
-}
-
-.final {
-    /* position: absolute; */
-    border: 1px solid #bdc3c7;
-    background-color: white;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-    /* left: 30%; */
-    width: 300px;
+.board {
+    height: 600px;
+    width: 550px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 80px;
+    margin-left: 30px;
+    
     
 }
 
-th,td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.hole {
+    background-color: rgb(165, 85, 11);
+    border-radius: 50%;
+    box-shadow: inset 0 10px 0 7px rgb(53, 21, 6),
+                inset 0 20px 20px 15px rgba(0, 0, 0, .3),
+                0 0 5px rgba(0, 0, 0, .5);
+    position: relative;
+    overflow: hidden;
 }
 
-#header {
-    background-color: #16a085;
-    color: #fff;
+.hole .mole {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: rise .3s ease-out;
+    user-select: none;
 }
 
-.Container{
-    display: flex;
-    margin-top: 10px;
-    /* background-color:gold; */
+.hole .mole2 {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    user-select: none;
+}
+@keyframes rise {
+    0%{
+        transform: translateX(-50%) translateY(100%);
+    }
+    100%{
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
-.Container2{
-    display: flex;
-    margin-top: 10px;
-    /* background-color:lime; */
+.cursor {
+    height: 110px;
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-image: url('https://raw.githubusercontent.com/0shuvo0/whack-a-mole/main/assets/hammer.png');
+    background-size: 100% 100%;
+    transform: translate(-20%, -20%);
+    transition: transform .1s;
+    pointer-events: none;
 }
 
-
-
-.Branch_1{
-    height: 830px;
-    width: 310px;
-    flex-wrap: wrap;
-    display: flex;
-    margin-left: 20px;
-}
-
-.Branch4{
-    margin-top: 200px;
-    height: 450px;
-    width: 310px;
-    flex-wrap: wrap;
-    display: flex;
-    margin-left: 20px;
-    background-color:limegreen;
-}
-
-.Branch_2{
-    height: 830px;
-    width: 310px;
-    flex-wrap: wrap;
-    display: flex;
-}
-
-.Branch_3{
-    height: 830px;
-    width: 310px;
-    flex-wrap: wrap;
-    display: flex;
-}
-
-.Branch_5{
-    height: 830px;
-    width: 310px;
-    flex-wrap: wrap;
-    display: flex;
-}
-
-.Object_1:nth-child(even), .Object_2:nth-child(even), .Object_3:nth-child(even){
-    display: grid;
-    grid-template-columns: 230px 100px;
-    grid-template-rows: 0px 0px;
-    background-color: rgb(255, 0, 0);
-    width: 300px;
-    padding-top: 4px;
-    padding-left: 4px;
-}
-
-.Object_1:nth-child(odd), .Object_2:nth-child(odd), .Object_3:nth-child(odd){
-    display: grid;
-    grid-template-columns: 120px 120px 30px;
-    grid-template-rows: 50px 50px;
-    background-color: rgb(75, 75, 75);
-    width: 300px;
-    padding-top: 4px;
-    padding-left: 4px;
-}
-
-.Name_Forward{
-    display: flex;
-    align-items: center;
-    width: 110px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 4px;
-    background-color: white; 
-}
-
-select{
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 4px;
-}
-
-select.Name{
-    width: 110px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 4px;
-}
-
-input.Time{
-    width: 110px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 4px;
-}
-
-.Match{
-    height: 200px;
-}
-
-.Object_2{
-    margin-top: 35%;
-}
-
-.Match_02{
-    height: 415px;
-}
-
-.Object_3{
-    margin-top: 100%;
-}
-
-.Match_03{
-    height: 830px;
-}
-
-.Match4{
-    height: 50px;
+.cursor2 {
+    height: 110px;
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-image: url('https://lh3.googleusercontent.com/cZa2y-LIkThe_2nTKCISKT9harfi2_9VlUiXzTnSeCihTLJcFE4yRlvDUcmoYGQIro2ws1rIolm_BbBNjfS5N2-oFZ8xSzrOqsNt5hD_fbxfTpwFGsprLb_DHECLzHX6fBdXpwmh=w2400');
+    background-size: 100% 100%;
+    transform: translate(-20%, -20%);
+    transition: transform .1s;
+    pointer-events: none;
 }
 
 
-.First:hover{
-    background-color: chocolate;
-    color: white;
-    font-size: 30px;
-    border-radius: 6px;
-    padding: 5px;   
+
+
+
+.cursor.active {
+    transform: translate(-20%, -20%) rotate(-45deg);
 }
 
-.First{
-    background-color: rgb(99, 42, 1);
-    color: white;
-    font-size: 30px;
-    border-radius: 6px;
-    padding: 5px;   
-}
-
-label.number{
-    font-size: 30px;
-}
-
-.Link_Style{
-    margin-top: 10px;
-}
-
-.blue{
-    border: 5px solid blue;
-}
-
-#pink{
-    background-color: pink;
-}
-
-#aqua{
-    background-color:aqua;
-}
-
-#purple{
-    background-color: purple;
-}
-
-#white{
-    background-color: whitesmoke;
-}
-
-#lastbox{
-    height: 150px;
+.cursor2.active {
+    transform: translate(-20%, -20%) rotate(-45deg);
 }
