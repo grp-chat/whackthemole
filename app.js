@@ -112,6 +112,21 @@ io.on('connection', (sock) => {
         io.emit('hammerTilt', { player,e });
     });
 
+    /* sock.on('moleHit', (data) => {
+        var player = data.player;
+        var score = data.score;
+        io.emit('moleUpd', { player, score });
+    }); */
+
+    sock.on('moleHit', () => {
+        io.emit('moleUpd');
+    });
+
+    sock.on('score', (data) => {
+        var scoredPlayer = data;
+        io.emit('sendScore', scoredPlayer);
+    });
+
     
 
     

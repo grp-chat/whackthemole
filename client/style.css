@@ -16,7 +16,7 @@ body {
     justify-content:left;
     align-items:flex-start;
     overflow: hidden;
-    cursor: none;
+    /* cursor: none; */
 }
 
 .score {
@@ -55,6 +55,7 @@ body {
     bottom: 0;
     animation: rise .3s ease-out;
     user-select: none;
+    -webkit-user-drag: none;
 }
 
 .hole .mole2 {
